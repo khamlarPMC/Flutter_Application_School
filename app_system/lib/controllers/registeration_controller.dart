@@ -35,9 +35,8 @@ class RegisterationController extends GetxController {
           if (kDebugMode) {
             print(token);
           }
-          final SharedPreferences? prefs = await _prefs;
-
-          await prefs?.setString('token', token);
+          final SharedPreferences prefs = await _prefs;
+          await prefs.setString('token', token);
           nameController.clear();
           emailController.clear();
           passwordController.clear();
