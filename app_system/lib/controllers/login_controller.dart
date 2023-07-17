@@ -28,8 +28,8 @@ class LoginController extends GetxController {
         final json = jsonDecode(response.body);
         if (json['code'] == 0) {
           var token = json['data']['Token'];
-          final SharedPreferences prefs = await _prefs;
-          await prefs.setString('token', token);
+          final SharedPreferences? prefs = await _prefs;
+          await prefs?.setString('token', token);
 
           emailController.clear();
           passwordController.clear();
